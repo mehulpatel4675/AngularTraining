@@ -1,0 +1,42 @@
+<p>login works!</p>
+<button (click)="getName()">Click Me...</button>
+<input
+  type="text"
+  #box
+  (keyup)="getData(box.value)"
+  placeholder="keyup event"
+/>
+<br />
+<input
+  type="text"
+  #box1
+  (keydown)="getData(box1.value)"
+  placeholder="keydown event"
+/>
+<br />
+<input
+  type="text"
+  #box3
+  (blur)="getData(box3.value)"
+  placeholder="Blur event"
+/>
+<br />
+<input
+  type="text"
+  #box4
+  (input)="getData(box4.value)"
+  placeholder="input event"
+/>
+
+<h2 (mouseover)="getData('over heading')">mouse over</h2>
+<h2 (mouseleave)="getData('Leave heading')">mouse over</h2>
+
+<input type="text" #box5 placeholder="with function" />
+<button (click)="getData2(box5.value)">click</button>
+<p>
+  {{ displayval }}
+</p>
+
+<button (click)="counter('minus')">--</button>
+<p>{{count}}</p>
+<button (click)="counter('add')">++</button>
