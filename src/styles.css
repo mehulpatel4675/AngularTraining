@@ -1,8 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 /* GLOBAL DECLARATION */
-body{
+/* body{
     background: #c42727;
 }
 h2{
     color:aqua;
+} */
+body{
+  margin: 0px;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

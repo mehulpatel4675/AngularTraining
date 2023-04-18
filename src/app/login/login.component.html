@@ -38,5 +38,123 @@
 </p>
 
 <button (click)="counter('minus')">--</button>
-<p>{{count}}</p>
+<p>{{ count }}</p>
 <button (click)="counter('add')">++</button>
+<hr />
+<h5>tut 14 property binding vs interpolation</h5>
+<hr />
+<!-- property binding vs interpolation -->
+<input type="text" name="" value="{{ name }}" disabled="{{ disable }}" /> //
+interpolation <br /><br />
+<input type="text" name="" [value]="name" [disabled]="disable" />// prop.
+biunding
+<hr />
+<h5>tut 15 if else</h5>
+<h2 *ngIf="show; then ifBlock; else elseBlock"></h2>
+<ng-template #ifBlock>
+  <h2>if Condition</h2>
+</ng-template>
+<ng-template #elseBlock>
+  <h2>Else Condition</h2>
+</ng-template>
+
+<h2
+  *ngIf="showwithparameter === 'yes'; then ifBlockele; else elseBlockele"
+></h2>
+<ng-template #ifBlockele>
+  <h2>if Condition string yes in var</h2>
+</ng-template>
+<ng-template #elseBlockele>
+  <h2>Else Condition string other than yes</h2>
+</ng-template>
+<hr />
+<hr />
+<h5>tut 16 nultiple condition else if</h5>
+<!-- <ng-template [ngIf]="color==='green'">
+  <h1 style="color:green">green Color</h1>
+</ng-template>
+<ng-template [ngIf]="color==='red'">
+  <h1 style="color:red">red Color</h1>
+</ng-template>
+<ng-template [ngIf]="color==='blue'">
+  <h1 style="color:blue">blue Color</h1>
+</ng-template> -->
+<hr />
+<h5>tut 17switch case</h5>
+<div [ngSwitch]="color">
+  <h1 *ngSwitchCase="'red'" style="color: red">red color</h1>
+  <h1 *ngSwitchCase="'green'" style="color: green">green color</h1>
+  <h1 *ngSwitchCase="'blue'" style="color: blue">blue color</h1>
+  <h1 *ngSwitchCase="'yellow'" style="color: yellow">yellow color</h1>
+  <h1 *ngSwitchDefault>unknow color</h1>
+</div>
+<hr />
+<h5>tut 18 Loop</h5>
+<!-- <h3 *ngFor="let item of user">Name is: {{item}}</h3>
+
+<h3 *ngFor="let item of userDetails">{{item.name}}--{{item.email}}--{{item.phone}}</h3> -->
+<hr />
+<h5>tut 19 Nested Loop</h5>
+<!-- <ul *ngFor="let user of usersDetails">
+  <li>{{ user.name }},{{ user.email }},{{ user.phone }}</li>
+  <ul *ngFor="let account of user.socialAccount">
+    <li>{{ account }}</li>
+  </ul>
+</ul> -->
+<hr />
+<h5>tut 20 style binding</h5>
+<h1 [style.color]="color" [style.backgroundColor]="bgcolor">
+  forgot type here
+</h1>
+<h1 [style.color]="color" [style.backgroundColor]="bgcolor">
+  text change color
+</h1>
+<button (click)="updateColor()">Update Color</button>
+<hr />
+<h5>tut 21 header (in main html)</h5>
+<hr />
+<h5>tut 22 form</h5>
+<form #basicForm="ngForm" (ngSubmit)="getdatafromform(basicForm.value)">
+  <input type="text" ngModel name="user" placeholder="enter user name" /><br />
+  <input type="email" ngModel name="email" placeholder="enter emai" /><br />
+  <input
+    type="password"
+    ngModel
+    name="password"
+    placeholder="enter password"
+  /><br />
+  <button>Register</button>
+
+
+<ul>
+  <li>{{ userData.user }}</li>
+  <li>{{ userData.email }}</li>
+  <li>{{ userData.password }}</li>
+</ul>
+<hr />
+<h5>tut 22 togal</h5>
+<button (click)="toggel()">Toggel</button>
+<h1 *ngIf="display">toggel message</h1>
+<hr />
+<h5>tut 23 bootstrep</h5>
+<div class="alert alert-warning" role="alert">
+  A simple warning alert—check it out!
+</div>
+<div class="alert alert-danger" role="alert">
+  A simple danger alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+</div>
+<hr />
+<h5>tut 24 material ui</h5>
+<section>
+  <div class="example-label">Raised</div>
+  <div class="example-button-row">
+    <button mat-raised-button>Basic</button>
+    <button mat-raised-button color="primary">Primary</button>
+    <button mat-raised-button color="accent">Accent</button>
+    <button mat-raised-button color="warn">Warn</button>
+    <button mat-raised-button disabled>Disabled</button>
+    <a mat-raised-button href="https://www.google.com/" target="_blank">Link</a>
+  </div>
+</section>
+
+

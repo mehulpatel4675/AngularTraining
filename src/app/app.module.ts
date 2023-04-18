@@ -9,7 +9,10 @@ import { UserListwithinlinestyleComponent } from './user-listwithinlinestyle/use
 import { StudentListComponent } from './student-list/student-list.component';
 import { CountryListComponent } from './country-list/country-list.component';
 import { UserAuthModule } from './user-auth/user-auth.module';
-
+import { HeaderComponent } from './header/header.component';
+import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,10 +22,14 @@ import { UserAuthModule } from './user-auth/user-auth.module';
     UserListwithinlinestyleComponent,
     StudentListComponent,
     CountryListComponent,
+    HeaderComponent,
   ],
   imports: [
     UserAuthModule,
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    NgbModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
