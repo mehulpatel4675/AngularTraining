@@ -1,6 +1,7 @@
 nav img{
   width: 70px;
   padding: 10px;
+  /* float: left; */
 }
 nav{
   background-color: skyblue;

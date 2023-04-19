@@ -13,6 +13,8 @@ import { HeaderComponent } from './header/header.component';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ChildComponent } from './child/child.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +25,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     StudentListComponent,
     CountryListComponent,
     HeaderComponent,
+    ChildComponent,
+    UserDetailsComponent,
   ],
   imports: [
     UserAuthModule,

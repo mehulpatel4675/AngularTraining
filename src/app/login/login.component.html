@@ -125,36 +125,60 @@ biunding
   /><br />
   <button>Register</button>
 
-
-<ul>
-  <li>{{ userData.user }}</li>
-  <li>{{ userData.email }}</li>
-  <li>{{ userData.password }}</li>
+  <ul>
+    <li>{{ userData.user }}</li>
+    <li>{{ userData.email }}</li>
+    <li>{{ userData.password }}</li>
+  </ul>
+  <hr />
+  <h5>tut 22 togal</h5>
+  <button (click)="toggel()">Toggel</button>
+  <h1 *ngIf="display">toggel message</h1>
+  <hr />
+  <h5>tut 23 bootstrep</h5>
+  <div class="alert alert-warning" role="alert">
+    A simple warning alert—check it out!
+  </div>
+  <div class="alert alert-danger" role="alert">
+    A simple danger alert with
+    <a href="#" class="alert-link">an example link</a>. Give it a click if you
+    like.
+  </div>
+  <hr />
+  <h5>tut 24 material ui</h5>
+  <section>
+    <div class="example-label">Raised</div>
+    <div class="example-button-row">
+      <button mat-raised-button>Basic</button>
+      <button mat-raised-button color="primary">Primary</button>
+      <button mat-raised-button color="accent">Accent</button>
+      <button mat-raised-button color="warn">Warn</button>
+      <button mat-raised-button disabled>Disabled</button>
+      <a mat-raised-button href="https://www.google.com/" target="_blank"
+        >Link</a
+      >
+    </div>
+  </section>
+</form>
+<hr />
+<h5>tut 25 TO Do List</h5>
+<input type="text"  placeholder="type what you do" #task >
+<br><br>
+<button (click)="addTask(task.value)">Save Your Note</button>
+<ul *ngFor="let item of todolist">
+  <li>{{ item.name}} <button (click)="removeTask(item.id)">Remove</button></li>
 </ul>
 <hr />
-<h5>tut 22 togal</h5>
-<button (click)="toggel()">Toggel</button>
-<h1 *ngIf="display">toggel message</h1>
-<hr />
-<h5>tut 23 bootstrep</h5>
-<div class="alert alert-warning" role="alert">
-  A simple warning alert—check it out!
-</div>
-<div class="alert alert-danger" role="alert">
-  A simple danger alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
-</div>
-<hr />
-<h5>tut 24 material ui</h5>
-<section>
-  <div class="example-label">Raised</div>
-  <div class="example-button-row">
-    <button mat-raised-button>Basic</button>
-    <button mat-raised-button color="primary">Primary</button>
-    <button mat-raised-button color="accent">Accent</button>
-    <button mat-raised-button color="warn">Warn</button>
-    <button mat-raised-button disabled>Disabled</button>
-    <a mat-raised-button href="https://www.google.com/" target="_blank">Link</a>
-  </div>
-</section>
+<h5>tut 26 send data parent to child</h5>
 
+<app-child [item]= "data"></app-child>
+<button (click)="updateChild()">Update child component</button>
+<p>&#129297;</p>
+<p>&#12851;</p>
 
+<hr />
+<h5>tut 27 send data  child  to parent</h5>
+<ul *ngFor="let user of userDetails">
+  <!-- <li>{{user.name}},{{user.email}}</li> -->
+  <app-user-details [item]='user'></app-user-details>
+</ul>

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import{} from ''
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -74,5 +73,26 @@ export class LoginComponent {
   toggel() {
     this.display = !this.display;
   }
+
+  todolist:any[]=[];
+  addTask(item:String){
+    this.todolist.push({id:this.todolist.length,name:item});
+    console.log(this.todolist);
+  }
+  removeTask(id:string){
+    console.log(id);
+    this.todolist = this.todolist.filter(item=>item.id!==id);
+
+  }
+data=10;
+updateChild(){
+  this.data = Math.floor(Math.random()*10)
+}
+userDetails=[
+  {name:'mehul', email:'mehul123@gmail.com'},
+  {name:'rahul', email:'rahul123@gmail.com'},
+  {name:'dhaval', email:'dhaval123@gmail.com'},
+  {name:'nilstark', email:'nilstark123@gmail.com'},
+]
 
 }
