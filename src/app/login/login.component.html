@@ -70,7 +70,7 @@ biunding
 <hr />
 <hr />
 <h5>tut 16 nultiple condition else if</h5>
-<!-- <ng-template [ngIf]="color==='green'">
+<ng-template [ngIf]="color==='green'">
   <h1 style="color:green">green Color</h1>
 </ng-template>
 <ng-template [ngIf]="color==='red'">
@@ -78,7 +78,7 @@ biunding
 </ng-template>
 <ng-template [ngIf]="color==='blue'">
   <h1 style="color:blue">blue Color</h1>
-</ng-template> -->
+</ng-template>
 <hr />
 <h5>tut 17switch case</h5>
 <div [ngSwitch]="color">
@@ -90,17 +90,17 @@ biunding
 </div>
 <hr />
 <h5>tut 18 Loop</h5>
-<!-- <h3 *ngFor="let item of user">Name is: {{item}}</h3>
+<h3 *ngFor="let item of user">Name is: {{item}}</h3>
 
-<h3 *ngFor="let item of userDetails">{{item.name}}--{{item.email}}--{{item.phone}}</h3> -->
+<h3 *ngFor="let item of userDetails">{{item.name}}--{{item.email}}</h3>
 <hr />
 <h5>tut 19 Nested Loop</h5>
-<!-- <ul *ngFor="let user of usersDetails">
+<ul *ngFor="let user of usersDetails">
   <li>{{ user.name }},{{ user.email }},{{ user.phone }}</li>
   <ul *ngFor="let account of user.socialAccount">
     <li>{{ account }}</li>
   </ul>
-</ul> -->
+</ul>
 <hr />
 <h5>tut 20 style binding</h5>
 <h1 [style.color]="color" [style.backgroundColor]="bgcolor">
@@ -159,7 +159,7 @@ biunding
       >
     </div>
   </section>
-</form>
+<!-- </form> -->
 <hr />
 <h5>tut 25 TO Do List</h5>
 <input type="text"  placeholder="type what you do" #task >
@@ -169,16 +169,49 @@ biunding
   <li>{{ item.name}} <button (click)="removeTask(item.id)">Remove</button></li>
 </ul>
 <hr />
-<h5>tut 26 send data parent to child</h5>
+<hr>
+<h5>tut 29 Two way Data binding</h5>
+<input type="text" [(ngModel)]="nametwoway">
+<h3>{{nametwoway}}</h3>
 
-<app-child [item]= "data"></app-child>
-<button (click)="updateChild()">Update child component</button>
-<p>&#129297;</p>
-<p>&#12851;</p>
+<hr>
+<h5>tut 30 Template ReferanceVariable</h5>
+<input type="text" #tut30>
+<button (click)="getVal(tut30.value)">call function</button>
 
-<hr />
-<h5>tut 27 send data  child  to parent</h5>
-<ul *ngFor="let user of userDetails">
-  <!-- <li>{{user.name}},{{user.email}}</li> -->
-  <app-user-details [item]='user'></app-user-details>
-</ul>
+<hr>
+<h5>tut 32 Pipes</h5>
+<h5>{{tut32 | uppercase}}</h5>
+<h5>{{tut32 | lowercase}}</h5>
+<h5>{{tut32}}</h5>
+<h5>{{today}}</h5>
+<h5>{{today | date}}</h5>
+<h5>{{today | date:"fullDate"}}</h5>
+<h5>{{dateChangeToString(today)}}</h5>
+
+<hr>
+<h5>tut 33 Advance Pipes</h5>
+<h5>{{tut34}}</h5>
+<h5>{{tut33 | slice:2:6 | uppercase}}</h5>
+<h5>{{tut33obj | json | uppercase}}</h5>
+<h5>{{20.3000 | number: '2.3-5'}}</h5>
+<h5>{{20.3000 | number: '2.3-5' | currency:'USD' }}</h5>
+<h5>{{00000000020.3000 | number: '4.3-5' | currency:'INR' }}</h5>
+<h5>{{00000000020.3000 | number: '4.3-5' | currency:'INR' }}</h5>
+
+<hr>
+<h5>tut 34 Custom Pipes</h5>
+<h5>{{tut33 | slice:2:6 | uppercase}}</h5>
+<h5>{{20}}</h5>
+<h5>{{tut33}}</h5>
+<h5>{{tut34}}</h5>
+
+<hr>
+<hr>
+<h5>tut 35 forms 36 template driven form</h5>
+<form #loginForm="ngForm" (ngSubmit)=userLogin(loginForm.value)>
+<input type="text" placeholder="Enter User Name" name="loginUser" ngModel> <br><br>
+<input type="password" placeholder="enter password" name="loginpassword" ngModel><br><br>
+ <button>Login</button>
+</form>
+<button (click)=userLogin(loginForm.value)>out side Form</button>

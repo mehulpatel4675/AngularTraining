@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import{FormControl,FormGroup} from '@angular/forms'
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -74,25 +76,46 @@ export class LoginComponent {
     this.display = !this.display;
   }
 
-  todolist:any[]=[];
-  addTask(item:String){
-    this.todolist.push({id:this.todolist.length,name:item});
+  todolist: any[] = [];
+  addTask(item: String) {
+    this.todolist.push({ id: this.todolist.length, name: item });
     console.log(this.todolist);
   }
-  removeTask(id:string){
+  removeTask(id: string) {
     console.log(id);
-    this.todolist = this.todolist.filter(item=>item.id!==id);
-
+    this.todolist = this.todolist.filter((item) => item.id !== id);
   }
-data=10;
-updateChild(){
-  this.data = Math.floor(Math.random()*10)
-}
-userDetails=[
-  {name:'mehul', email:'mehul123@gmail.com'},
-  {name:'rahul', email:'rahul123@gmail.com'},
-  {name:'dhaval', email:'dhaval123@gmail.com'},
-  {name:'nilstark', email:'nilstark123@gmail.com'},
-]
+  data = 10;
+  updateChild() {
+    this.data = Math.floor(Math.random() * 10);
+  }
 
+  userDetails = [
+    { name: 'mehul', email: 'mehul123@gmail.com' },
+    { name: 'rahul', email: 'rahul123@gmail.com' },
+    { name: 'dhaval', email: 'dhaval123@gmail.com' },
+    { name: 'nilstark', email: 'nilstark123@gmail.com' },
+  ];
+
+  nametwoway: any;
+
+  getVal(item: any) {
+    console.log(item);
+  }
+  tut32 = 'Basic information of Pipes';
+  today = Date();
+  dateChangeToString(item: string) {
+    return item.toUpperCase();
+  }
+  tut33 = 'Advance of Pipes';
+  tut33obj = {
+    name: 'Mehul',
+    age: 25,
+  };
+
+  tut34 = 88;
+
+  userLogin(item:any){
+console.warn(item)
+  }
 }
