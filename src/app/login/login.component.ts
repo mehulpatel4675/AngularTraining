@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import{FormControl,FormGroup} from '@angular/forms'
+import { NgForm, Validators } from '@angular/forms';
+import { FormControl,FormGroup,Validator} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -115,7 +115,19 @@ export class LoginComponent {
 
   tut34 = 88;
 
-  userLogin(item:any){
-console.warn(item)
+  userLogin(item: any) {
+    console.warn(item);
+  }
+
+  loginFormReactive = new FormGroup({
+    userR: new FormControl('',[Validators.required]),
+    password: new FormControl('')
+  });
+  userLoginReactive() {
+    console.log(this.loginFormReactive.value);
+  }
+
+  get userR(){
+    return this.loginFormReactive.get('userR')
   }
 }

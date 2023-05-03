@@ -70,14 +70,14 @@ biunding
 <hr />
 <hr />
 <h5>tut 16 nultiple condition else if</h5>
-<ng-template [ngIf]="color==='green'">
-  <h1 style="color:green">green Color</h1>
+<ng-template [ngIf]="color === 'green'">
+  <h1 style="color: green">green Color</h1>
 </ng-template>
-<ng-template [ngIf]="color==='red'">
-  <h1 style="color:red">red Color</h1>
+<ng-template [ngIf]="color === 'red'">
+  <h1 style="color: red">red Color</h1>
 </ng-template>
-<ng-template [ngIf]="color==='blue'">
-  <h1 style="color:blue">blue Color</h1>
+<ng-template [ngIf]="color === 'blue'">
+  <h1 style="color: blue">blue Color</h1>
 </ng-template>
 <hr />
 <h5>tut 17switch case</h5>
@@ -90,9 +90,9 @@ biunding
 </div>
 <hr />
 <h5>tut 18 Loop</h5>
-<h3 *ngFor="let item of user">Name is: {{item}}</h3>
+<h3 *ngFor="let item of user">Name is: {{ item }}</h3>
 
-<h3 *ngFor="let item of userDetails">{{item.name}}--{{item.email}}</h3>
+<h3 *ngFor="let item of userDetails">{{ item.name }}--{{ item.email }}</h3>
 <hr />
 <h5>tut 19 Nested Loop</h5>
 <ul *ngFor="let user of usersDetails">
@@ -159,59 +159,85 @@ biunding
       >
     </div>
   </section>
-<!-- </form> -->
-<hr />
-<h5>tut 25 TO Do List</h5>
-<input type="text"  placeholder="type what you do" #task >
-<br><br>
-<button (click)="addTask(task.value)">Save Your Note</button>
-<ul *ngFor="let item of todolist">
-  <li>{{ item.name}} <button (click)="removeTask(item.id)">Remove</button></li>
-</ul>
-<hr />
-<hr>
-<h5>tut 29 Two way Data binding</h5>
-<input type="text" [(ngModel)]="nametwoway">
-<h3>{{nametwoway}}</h3>
+  <!-- </form> -->
+  <hr />
+  <h5>tut 25 TO Do List</h5>
+  <input type="text" placeholder="type what you do" #task />
+  <br /><br />
+  <button (click)="addTask(task.value)">Save Your Note</button>
+  <ul *ngFor="let item of todolist">
+    <li>
+      {{ item.name }} <button (click)="removeTask(item.id)">Remove</button>
+    </li>
+  </ul>
+  <hr />
+  <hr />
+  <h5>tut 29 Two way Data binding</h5>
+  <input type="text" [(ngModel)]="nametwoway" />
+  <h3>{{ nametwoway }}</h3>
 
-<hr>
-<h5>tut 30 Template ReferanceVariable</h5>
-<input type="text" #tut30>
-<button (click)="getVal(tut30.value)">call function</button>
+  <hr />
+  <h5>tut 30 Template ReferanceVariable</h5>
+  <input type="text" #tut30 />
+  <button (click)="getVal(tut30.value)">call function</button>
 
-<hr>
-<h5>tut 32 Pipes</h5>
-<h5>{{tut32 | uppercase}}</h5>
-<h5>{{tut32 | lowercase}}</h5>
-<h5>{{tut32}}</h5>
-<h5>{{today}}</h5>
-<h5>{{today | date}}</h5>
-<h5>{{today | date:"fullDate"}}</h5>
-<h5>{{dateChangeToString(today)}}</h5>
+  <hr />
+  <h5>tut 32 Pipes</h5>
+  <h5>{{ tut32 | uppercase }}</h5>
+  <h5>{{ tut32 | lowercase }}</h5>
+  <h5>{{ tut32 }}</h5>
+  <h5>{{ today }}</h5>
+  <h5>{{ today | date }}</h5>
+  <h5>{{ today | date : "fullDate" }}</h5>
+  <h5>{{ dateChangeToString(today) }}</h5>
 
-<hr>
-<h5>tut 33 Advance Pipes</h5>
-<h5>{{tut34}}</h5>
-<h5>{{tut33 | slice:2:6 | uppercase}}</h5>
-<h5>{{tut33obj | json | uppercase}}</h5>
-<h5>{{20.3000 | number: '2.3-5'}}</h5>
-<h5>{{20.3000 | number: '2.3-5' | currency:'USD' }}</h5>
-<h5>{{00000000020.3000 | number: '4.3-5' | currency:'INR' }}</h5>
-<h5>{{00000000020.3000 | number: '4.3-5' | currency:'INR' }}</h5>
+  <hr />
+  <h5>tut 33 Advance Pipes</h5>
+  <h5>{{ tut34 }}</h5>
+  <h5>{{ tut33 | slice : 2 : 6 | uppercase }}</h5>
+  <h5>{{ tut33obj | json | uppercase }}</h5>
+  <h5>{{ 20.3 | number : "2.3-5" }}</h5>
+  <h5>{{ 20.3 | number : "2.3-5" | currency : "USD" }}</h5>
+  <h5>{{ 00000000020.3 | number : "4.3-5" | currency : "INR" }}</h5>
+  <h5>{{ 00000000020.3 | number : "4.3-5" | currency : "INR" }}</h5>
 
-<hr>
-<h5>tut 34 Custom Pipes</h5>
-<h5>{{tut33 | slice:2:6 | uppercase}}</h5>
-<h5>{{20}}</h5>
-<h5>{{tut33}}</h5>
-<h5>{{tut34}}</h5>
+  <hr />
+  <h5>tut 34 Custom Pipes</h5>
+  <h5>{{ tut33 | slice : 2 : 6 | uppercase }}</h5>
+  <h5>{{ 20 }}</h5>
+  <h5>{{ tut33 }}</h5>
+  <h5>{{ tut34 }}</h5>
 
-<hr>
-<hr>
-<h5>tut 35 forms 36 template driven form</h5>
-<form #loginForm="ngForm" (ngSubmit)=userLogin(loginForm.value)>
-<input type="text" placeholder="Enter User Name" name="loginUser" ngModel> <br><br>
-<input type="password" placeholder="enter password" name="loginpassword" ngModel><br><br>
- <button>Login</button>
+  <hr />
+  <hr />
+  <h5>tut 35 forms 36 template driven form</h5>
+  <form #loginForm="ngForm" (ngSubmit)="userLogin(loginForm.value)">
+    <input type="text" placeholder="Enter User Name" name="loginUser" ngModel />
+    <br /><br />
+    <input
+      type="password"
+      placeholder="enter password"
+      name="loginpassword"
+      ngModel
+    /><br /><br />
+    <button>Login</button>
+  </form>
+  <button (click)="userLogin(loginForm.value)">out side Form</button>
 </form>
-<button (click)=userLogin(loginForm.value)>out side Form</button>
+
+<hr />
+<hr />
+<h5>tut 37 Reactive Form in Angular</h5>
+<form [formGroup]="loginFormReactive" (ngSubmit)="userLoginReactive()">
+  <input type="text" placeholder="Enter Name" formControlName="userR" />
+  <span style="color: red" *ngIf="userR && userR.invalid"
+    >This Is Not Valid Field</span
+  ><br>
+  <input
+    type="password"
+    placeholder="Enter pasword"
+    formControlName="password"
+  />
+  <br>
+  <button [disabled]="loginFormReactive.invalid">Login</button>
+</form>
